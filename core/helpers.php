@@ -30,3 +30,9 @@ function get(string $url, string $controller)
 //    return coreRoutesDelete($url, $controller);
 //}
 
+function responseJson($response, $code)
+{
+    http_response_code($code);
+    header('Content-type: application/json');
+    return json_encode($response);
+}

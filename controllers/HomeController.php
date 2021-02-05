@@ -14,7 +14,7 @@ $index = function($id, $id1) use ($customerService)
 
     $results = $customerService['index']($arrParams);
 
-    return json_encode($results);
+    return responseJson($results, 200);
 };
 
 
