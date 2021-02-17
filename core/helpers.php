@@ -36,3 +36,8 @@ function responseJson($response, $code)
     header('Content-type: application/json');
     return json_encode($response);
 }
+
+function request()
+{
+    return coreRequestsParams();
+}

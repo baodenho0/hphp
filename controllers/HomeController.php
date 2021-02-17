@@ -1,26 +1,41 @@
 <?php
-$customerService = require_once "../Services/Customers/CustomerService.php";
+$customerService = require_once "../services/Customers/CustomerService.php";
 
 
 $__construct = function () {
 
 };
 
-$index = function($id, $id1) use ($customerService)
+$index = function() use ($customerService)
 {
-    $arrParams = [
-        $id, $id1
-    ];
-
-    $results = $customerService['index']($arrParams);
+    $results = $customerService['index']();
 
     return responseJson($results, 200);
 };
 
+$edit = function ($id) use ($customerService)
+{
+    $results = $customerService['edit']($id);
 
+    return responseJson($results, 200);
+};
 
 $create = function ()
 {
     echo 'create in home controller';
+};
+
+$insert = function () use ($customerService)
+{
+    $results = $customerService['insert']();
+
+    return responseJson($results, 200);
+};
+
+$update = function () use ($customerService)
+{
+    $results = $customerService['update']();
+
+    return responseJson($results, 200);
 };
 

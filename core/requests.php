@@ -24,3 +24,8 @@ function coreRequestsQueryURL()
     return substr(coreRequestsFullUrl(), strlen(coreRequestsAppURL()));
 }
 
+function coreRequestsParams()
+{
+    return $_REQUEST;
+}
+

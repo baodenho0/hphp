@@ -1,9 +1,13 @@
 <?php
 
 group(['namespace' => 'controllers'] , function () {
-    get('index/{id}/abc/{id1}/aaa', 'HomeController@index');
+    get('index', 'HomeController@index');
+    get('index/{id}', 'HomeController@edit');
     get('create', 'HomeController@create');
+    get('insert', 'HomeController@insert');
+    get('update', 'HomeController@update');
 
+    get('login', 'LoginController@login');
 //    coreRoutesGet('product/index', 'ProductController@index');
 
     group(['namespace' => 'controllers'] , function () {
