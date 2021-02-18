@@ -1,9 +1,10 @@
 <?php
-require_once "../core/app.php";
 
-
-
-//dd('end');
-//print_r($_SERVER);
+/**
+ * ==================
+ * hphp framework
+ * ==================
+ */
+require_once "../vendor/hphp/framework/src/app.php";
 
 
