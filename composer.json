@@ -1,9 +1,9 @@
 {
-    "name": "funcphp/funcphp_framework",
+    "name": "hphp/hphp",
     "description": "The funcphp framework.",
     "keywords": [
         "framework",
-        "funcphp",
+        "hphp",
         "functional programming php"
     ],
     "type": "project",
@@ -16,6 +16,6 @@
     ],
     "require": {
         "php": "^7.2.5|^8.0",
-        "funcphp/funcphp": "dev-master"
+        "hphp/framework": "dev-master"
     }
 }
