@@ -16,6 +16,6 @@
     ],
     "require": {
         "php": "^7.2.5|^8.0",
-        "hphp/framework": "dev-master"
+        "hphp/framework": "0.1"
     }
 }
