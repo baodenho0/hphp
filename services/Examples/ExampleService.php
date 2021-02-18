@@ -30,14 +30,21 @@ $edit = function ($id) use ($customer) {
     ];
 };
 
-$insert = function () use ($customer) {
+$store = function () use ($customer) {
     $arrParams = [
         'name' => 'test123',
         'email' => 'test123',
         'address' => 'test123',
     ];
 
-    return $customer['insert']($arrParams);
+    return [
+        'error' => 0,
+        'status' => 201,
+        'msg' => 'success',
+        'data' => [
+            'created' => $customer['insert']($arrParams),
+        ]
+    ];
 };
 
 $update = function () use ($customer) {
@@ -47,13 +54,20 @@ $update = function () use ($customer) {
         'address' => 'test123',
     ];
 
-    return $customer['updateById']($arrParams, 1);
+    return [
+        'error' => 0,
+        'status' => 200,
+        'msg' => 'success',
+        'data' => [
+            'updated' => $customer['updateById']($arrParams, 1)
+        ]
+    ];
 };
 
 
 return compact(
     'index',
-    'insert',
+    'store',
     'edit',
     'update'
 );

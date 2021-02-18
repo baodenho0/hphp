@@ -20,11 +20,11 @@ $create = function ()
     echo 'create in example controller';
 };
 
-$insert = function () use ($customerService)
+$store = function () use ($customerService)
 {
-    $results = $customerService['insert']();
+    $results = $customerService['store']();
 
-    return responseJson($results, 200);
+    return responseJson($results, 201);
 };
 
 $update = function () use ($customerService)
