@@ -17,7 +17,13 @@ $edit = function ($id) use ($customerService)
 
 $create = function ()
 {
-    echo 'create in example controller';
+    $results = [
+        'error' => 0,
+        'status' => 200,
+        'msg' => 'oke',
+    ];
+
+    return responseJson($results, 200);
 };
 
 $store = function () use ($customerService)
