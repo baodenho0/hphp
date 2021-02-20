@@ -1,22 +1,26 @@
 <?php
 
-$customer = require_once "../models/Example.php";
+$example = import("../models/Example.php");
+$example1 = import("../models/Example1.php");
+dd($example);
 
-
-$index = function () use ($customer) {
+$index = function () use ($example, $example1) {
 
     return [
         'error' => 0,
         'status' => 200,
         'msg' => 'success',
         'data' => [
-            'customers' => $customer['getAll'](),
+            'customers' => $example['getAll'](),
+            'users' => $example1['getAll'](),
+            'qUsers' => $example1['model']['get'](),
+            'qCustomers' => $example1['model']['get'](),
         ]
     ];
 };
 
-$edit = function ($id) use ($customer) {
-//    $model = $customer;
+$edit = function ($id) use ($example) {
+//    $model = $example;
 //    $q = $model['customer']['where']('id', '=', $id)['get']();
 //    dd($q);
 
@@ -25,12 +29,12 @@ $edit = function ($id) use ($customer) {
         'status' => 200,
         'msg' => 'success',
         'data' => [
-            'customers' => $customer['findById']($id),
+            'customers' => $example['findById']($id),
         ]
     ];
 };
 
-$store = function () use ($customer) {
+$store = function () use ($example) {
     $arrParams = [
         'name' => 'test123',
         'email' => 'test123',
@@ -42,12 +46,12 @@ $store = function () use ($customer) {
         'status' => 201,
         'msg' => 'success',
         'data' => [
-            'created' => $customer['insert']($arrParams),
+            'created' => $example['insert']($arrParams),
         ]
     ];
 };
 
-$update = function () use ($customer) {
+$update = function () use ($example) {
     $arrParams = [
         'name' => 'test123',
         'email' => 'test123',
@@ -59,7 +63,7 @@ $update = function () use ($customer) {
         'status' => 200,
         'msg' => 'success',
         'data' => [
-            'updated' => $customer['updateById']($arrParams, 1)
+            'updated' => $example['updateById']($arrParams, 1)
         ]
     ];
 };

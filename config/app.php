@@ -17,7 +17,7 @@ return [
             'host' => 'localhost',
             'username' => 'root',
             'password' => '',
-            'table' => 'test',
+            'database' => 'test',
         ],
 
 

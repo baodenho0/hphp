@@ -1,39 +1,42 @@
 <?php
-
+/**
+ * loi xu ly o 2 models
+ * y tuong: lay model o bien export
+ */
+$model = import("../vendor/hphp/framework/src/model.php");
 $table = 'customers';
 
-$customer = require_once "../vendor/hphp/framework/src/model.php";
-
-$getAll = function () use ($customer)
+$getAll = function () use ($model)
 {
 
     return [
         'function' => 'getAll',
-        'model' => 'customer',
-        'data' => $customer['get'](),
+        'model' => 'customers',
+        'data' => $model['get'](),
     ];
 };
 
-$findById = function ($id) use ($customer)
+$findById = function ($id) use ($model)
 {
-    return $customer['where']('id', '=', $id)
+    return $model['where']('id', '=', $id)
         ['delete']();
 
 };
 
-$insert = $customer['insert'];
+$insert = $model['insert'];
 
-$updateById = function ($params, $id) use ($customer)
+$updateById = function ($params, $id) use ($model)
 {
-    return $customer['where']('id', '=', $id)['update']($params);
+    return $model['where']('id', '=', $id)['update']($params);
 };
 
-return compact(
+return export('../models/Example.php', compact(
+    'table',
     'getAll',
     'findById',
     'insert',
-    'updateById',
-    'customer'
-);
+    'model',
+    'updateById'
+));
 
 
