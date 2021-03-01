@@ -2,7 +2,7 @@
 
 $example = import("../models/Example.php");
 $example1 = import("../models/Example1.php");
-dd($example);
+
 
 $index = function () use ($example, $example1) {
 
@@ -13,8 +13,8 @@ $index = function () use ($example, $example1) {
         'data' => [
             'customers' => $example['getAll'](),
             'users' => $example1['getAll'](),
-            'qUsers' => $example1['model']['get'](),
-            'qCustomers' => $example1['model']['get'](),
+//            'qUsers' => $example1['model']['get'](),
+//            'qCustomers' => $example1['model']['get'](),
         ]
     ];
 };

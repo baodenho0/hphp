@@ -1,18 +1,16 @@
 <?php
-/**
- * loi xu ly o 2 models
- * y tuong: lay model o bien export
- */
-$model = import("../vendor/hphp/framework/src/model.php");
-$table = 'customers';
+
+$model = import('../vendor/hphp/framework/src/model.php');
+$model = table('customers');
+dd($model);
+
 
 $getAll = function () use ($model)
 {
-
     return [
         'function' => 'getAll',
         'model' => 'customers',
-        'data' => $model['get'](),
+        'data' => $model['where']('id', '=', 6)['get'](),
     ];
 };
 
@@ -31,7 +29,6 @@ $updateById = function ($params, $id) use ($model)
 };
 
 return export('../models/Example.php', compact(
-    'table',
     'getAll',
     'findById',
     'insert',

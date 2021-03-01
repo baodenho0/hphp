@@ -1,9 +1,9 @@
 <?php
 
-$example = import("../models/Example.php");
+//$example = import("../models/Example.php");
 
 
-$handle = function ($next) use ($example)
+$handle = function ($next) //use ($example)
 {
     return $next;
 };

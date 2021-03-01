@@ -1,17 +1,19 @@
 <?php
 
 $model = import("../vendor/hphp/framework/src/model.php");
-//$model['setTable']('users');
-$table = 'users';
 
-$getAll = function ()
+
+$getAll = function () use ($model)
 {
-    return ['1','3', 'list'];
+
+    return [
+        'function' => 'getAll',
+        'model' => 'users',
+        'data' => $model['get'](),
+    ];
 };
 
 return export('../models/Example1.php', compact(
-    'table',
-    'model',
     'getAll'
 ));
 
