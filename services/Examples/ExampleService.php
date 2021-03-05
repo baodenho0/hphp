@@ -12,9 +12,8 @@ $index = function () use ($example, $example1) {
         'msg' => 'success',
         'data' => [
             'customers' => $example['getAll'](),
-            'users' => $example1['getAll'](),
-//            'qUsers' => $example1['model']['get'](),
-//            'qCustomers' => $example1['model']['get'](),
+            'orders' => $example1['getAll'](),
+
         ]
     ];
 };
