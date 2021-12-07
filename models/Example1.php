@@ -1,7 +1,7 @@
 <?php
 
 $model = import("../vendor/hphp/framework/src/model.php");
-$model = $model['table']('orders');
+
 
 $getAll = function () use ($model)
 {

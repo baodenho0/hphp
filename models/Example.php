@@ -1,14 +1,16 @@
 <?php
 
 $model = import('../vendor/hphp/framework/src/model.php');
-$model = $model['table']('customer');
+$model = table('customers');
+dd($model);
+
 
 $getAll = function () use ($model)
 {
     return [
         'function' => 'getAll',
         'model' => 'customers',
-        'data' => $model['get'](),
+        'data' => $model['where']('id', '=', 6)['get'](),
     ];
 };
 
@@ -19,7 +21,7 @@ $findById = function ($id) use ($model)
 
 };
 
-//$insert = $model['insert'];
+$insert = $model['insert'];
 
 $updateById = function ($params, $id) use ($model)
 {
